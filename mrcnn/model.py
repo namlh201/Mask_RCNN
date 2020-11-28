@@ -2343,8 +2343,8 @@ class MaskRCNN():
                                          augmentation=augmentation,
                                          batch_size=self.config.BATCH_SIZE,
                                          no_augmentation_sources=no_augmentation_sources)
-        val_generator = DataGenerator(val_dataset, self.config, shuffle=True,
-                                       batch_size=self.config.BATCH_SIZE)
+#         val_generator = DataGenerator(val_dataset, self.config, shuffle=True,
+#                                        batch_size=self.config.BATCH_SIZE)
 
         # Create log_dir if it does not exist
         if not os.path.exists(self.log_dir):
@@ -2382,8 +2382,8 @@ class MaskRCNN():
             epochs=epochs,
             steps_per_epoch=self.config.STEPS_PER_EPOCH,
             callbacks=callbacks,
-            validation_data=val_generator,
-            validation_steps=self.config.VALIDATION_STEPS,
+#             validation_data=val_generator,
+#             validation_steps=self.config.VALIDATION_STEPS,
             max_queue_size=100,
             workers=workers,
             use_multiprocessing=True,
